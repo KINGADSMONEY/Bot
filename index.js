@@ -36,17 +36,25 @@ function changing_status() {
         message.channel.send(anuncio);
 
       }
-      if(comando === 'reload') {
-        if (message.author.id !== '430093309617111063') return;
+      if(comando === 'reiniciar') {
         resetBot(message.channel)
-        async function resetBot(channel) {
-            let token = bot.token;
-            await message.react(':white_check_mark:')
-                .then(message => bot.destroy())
-                .then(message => bot.destroy())
-                .then(() => bot.login(token));
-            message.channel.send('Bot foi reiniciado.')
-        }
+            async function resetBot(channel) {
+                channel.send(`Reiniciando...`)
+                .then(msg => client.destroy(true))
+                .then(() => client.login('NDk2MDc4OTkwMzUyNzExNzAw.DpWU_w.4L2K3iaCSqPFHCEAtdNjGEA6-h8'));
+             }
+    
+        client.on('ready', () => {
+            message.channel.send(`Bot reiniciado com sucesso!`);
+        });
     }
+
+    if(comando  === 'status'){
+      let stats = args.join(" ");
+      if(!stats) return message.channel.send("O que quer que eu jogue?");
+      bot.user.setActivity(stats, {type: "PLAYING"});
+      message.channel.send(`Agora estou jogando ${stats}`)
+    }
+
   })
 bot.login(config.token);
