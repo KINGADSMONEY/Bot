@@ -36,9 +36,8 @@ function changing_status() {
         message.channel.send(anuncio);
 
       }
-      if(comando === 'reiniciar') {
+      if(comando === 'reload') {
         if (message.author.id !== '430093309617111063') return;
-    
         resetBot(message.channel)
         async function resetBot(channel) {
             let token = bot.token;
@@ -46,9 +45,8 @@ function changing_status() {
                 .then(message => bot.destroy())
                 .then(message => bot.destroy())
                 .then(() => bot.login(token));
-            message.channel.send('Bot reiniciado com sucesso!')
+            message.channel.send('Bot foi reiniciado.')
         }
     }
-
   })
 bot.login(config.token);
