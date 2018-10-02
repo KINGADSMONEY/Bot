@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-    let status = [`Anúncios com +anuncio | ${bot.guilds.size}`]
+    let status = [`Anúncios com +anuncio | ${bot.guilds.size} servidores`]
     let random = status[Math.floor(Math.random() * status.length)]
     bot.user.setActivity(random)
   }
