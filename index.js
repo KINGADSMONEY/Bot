@@ -36,6 +36,19 @@ function changing_status() {
         message.channel.send(anuncio);
 
       }
+      if(comando === `ajuda`) {
+        message.delete();
+        const sayMessage = args.join(" ");
+        let anuncio = new Discord.RichEmbed()
+        .setColor("#FFFF00")
+        .addField("📢 Ajuda 📢")
+        .addField("+anuncio - Você anuncia no chat que você digitou o comando. \n +anunciopriv - Você anuncia no privado de todos os membros de seu servidor.")
+        .setTimestamp()
+        .setFooter(`Desenvolvedor: Guilherme | Programador#8061`, message.author.displayAvatarURL)
+        .setThumbnail(bot.user.displayAvatarURL)
+        message.channel.send(anuncio);
+
+      }
       if(comando === 'reiniciar') {
             if (message.author.id !== '430093309617111063') return;
         resetBot(message.channel)
@@ -57,11 +70,6 @@ function changing_status() {
       bot.user.setActivity(stats, {type: "PLAYING"});
       message.channel.send(`Agora estou jogando ${stats}`)
     }
-      if(message.channel.id == "496428131633201182"){
-        message.react(':sucesso:').then(r=>{
-          message.react(':error:')
-        })
-        };
-
+    
   });
 bot.login(config.token);
