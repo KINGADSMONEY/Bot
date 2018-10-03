@@ -49,7 +49,14 @@ function changing_status() {
         message.channel.send(anuncio);
 
       }
-
+      if(comando === `ajuda`) {
+       var embed = discord.RichEmbed()
+       .setColor("#FFFF00")
+       .setTitle("📢 Ajuda 📢")
+       .addField("+anuncio - Você anuncia no chat que você digitou o comando.\n +anunciopv - Você anuncia no privado de todos os jogadores de seu discord. ")
+       .setThumbnail(bot.user.displayAvatarURL)
+       message.channel.send(embed)
+      }
     if(comando  === 'status'){
       if (message.author.id !== '430093309617111063') return;
       let stats = args.join(" ");
