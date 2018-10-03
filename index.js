@@ -37,14 +37,100 @@ function changing_status() {
 
       }
       if(comando === `ajuda`) {
-        message.delete();
-        let ajuda = new Discord.RichEmbed()
-        .setColor("#FFFF00")
-        .setTitle("📢 Ajuda 📢")
-        .addField("+anuncio - Você anuncia no chat que você digitou o comando. \n +anunciopriv - Você anuncia no privado de todos os membros de seu servidor.")
-        message.channel.send(anuncio);
-
-      }
+        message.channel.send({embed: {
+            color: 3447003,
+            author: {
+              name: client.user.username,
+              icon_url: client.user.avatarURL
+            },
+            title: "Invite da Xion (Não Liberado)",
+            url: "https://discord.gg/jqxd56",
+            description: "Lista de Comandos da Xion",
+            fields: [{
+                name: "**(Prefix)ping**",
+                value: "A Bot Mostrara o seu Ping Atual"
+              },
+              {
+                name: "**(Prefix)say**",
+                value: "Oque você escrever depois do say, a Almofada falará a mesma coisa!"
+              },
+              {
+                name: "**(Prefix)clear**",
+                value: "A Bot limpara as mensagens selecionadas, Apenas membros com a permisão Gerenciar Mensagens pode usar este comando"
+              },
+              {
+                name: "**(Prefix)roleta**",
+                value: "A Bot fara um sorteio assim mostrando se o membro perdeu ou ganhou Uso Especifiço para Eventos"
+              },
+              {
+                  name: "**(Prefix)nick**",
+                  value: "O Usuário mudara o nick/apelido do membro, presisa ter a permisão gerenciar apelidos para usar este comando!"
+              },
+              {
+                  name: "**(Prefix)ban**",
+                  value: "A Bot banira o usuário"
+              },
+              {
+                  name: "**(Prefix)kick**",
+                  value: "A Bot kickara o usuário"
+              },
+              {
+                  name: "**(Prefix)sugest**",
+                  value: "Mande a sua sugestão para a Xion, comandos etc!   "
+              },
+              {
+                  name: "**(Prefix)avatar**",
+                  value: "A Bot Mostrara a foto de perfil do usuário marcado!"
+              },
+              {
+                  name: "**(Prefix)anunciar**",
+                  value: "A Bot fara um anuncio com a sua mensagem, Requer ter adm"
+              },
+              {
+                  name: "**(Prefix)parceiros**",
+                  value: "mostra os parceiros que a Xion tem"
+              },
+              {
+                  name: "**(Prefix)link**",
+                  value: "Mostra o Link do Discord da Xion"
+              },
+              {
+                  name: "**(Prefix)catm**",
+                  value: "A Bot enviara uma foto de um meme/piada de 'gato'"
+              },
+              {
+                  name: "**(Prefix)ms**",
+                  value: "Mostra a quantidade de usuários e servidores que eu estou"
+              },
+              {
+                  name: "**(Prefix)loli**",
+                  value: "A Bot enviara uma loli para o chat"
+              },
+              {
+                  name: "**(Prefix)cat**",
+                  value: "Enviara um gato pro chat"
+              },
+              {
+                  name: "**(Prefix)on**",
+                  value: "Mostrara quantidade de membros que o servidor atual e servidores que eu estou"
+              },
+              {
+                  name: "**(Prefix)ms**",
+                  value: "Mostrara a quantidade de membros e servidore que eu acompanho no momento"
+              },
+              {
+                  name: "**(Prefix)ajuda**",
+                  value: "Mostrara todos os comandos da bot"
+              }
+            ],
+            timestamp: new Date(),
+            footer: {
+              icon_url: client.user.avatarURL,
+              text: "Xion"
+            }
+          }
+        })
+    }
       if(comando === 'reiniciar') {
             if (message.author.id !== '430093309617111063') return;
         resetBot(message.channel)
