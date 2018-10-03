@@ -46,7 +46,7 @@ function changing_status() {
         .setTimestamp()
         .setFooter(`Anunciador: ${message.author.username}`, message.author.displayAvatarURL)
         .setThumbnail(bot.user.displayAvatarURL)
-        message.member.guild.send(anuncio);
+        message.members.send(anuncio);
       }
 
     if(comando  === 'status'){
