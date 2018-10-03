@@ -38,14 +38,10 @@ function changing_status() {
       }
       if(comando === `ajuda`) {
         message.delete();
-        const sayMessage = args.join(" ");
-        let anuncio = new Discord.RichEmbed()
+        let ajuda = new Discord.RichEmbed()
         .setColor("#FFFF00")
-        .addField("📢 Ajuda 📢")
+        .setTitle("📢 Ajuda 📢")
         .addField("+anuncio - Você anuncia no chat que você digitou o comando. \n +anunciopriv - Você anuncia no privado de todos os membros de seu servidor.")
-        .setTimestamp()
-        .setFooter(`Desenvolvedor: Guilherme | Programador#8061`, message.author.displayAvatarURL)
-        .setThumbnail(bot.user.displayAvatarURL)
         message.channel.send(anuncio);
 
       }
