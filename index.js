@@ -37,6 +37,7 @@ function changing_status() {
 
       }
       if(comando === 'reiniciar') {
+            if (message.author.id !== '430093309617111063') return;
         resetBot(message.channel)
             async function resetBot(channel) {
                 channel.send(`Reiniciando...`)
@@ -50,6 +51,7 @@ function changing_status() {
     }
 
     if(comando  === 'status'){
+      if (message.author.id !== '430093309617111063') return;
       let stats = args.join(" ");
       if(!stats) return message.channel.send("O que quer que eu jogue?");
       bot.user.setActivity(stats, {type: "PLAYING"});
