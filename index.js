@@ -57,6 +57,11 @@ function changing_status() {
       bot.user.setActivity(stats, {type: "PLAYING"});
       message.channel.send(`Agora estou jogando ${stats}`)
     }
+      if(message.channel.id == "496428131633201182"){
+        message.react(':sucesso:').then(r=>{
+          message.react(':error:')
+        })
+        };
 
-  })
+  });
 bot.login(config.token);
