@@ -45,6 +45,7 @@ function changing_status() {
         .addField("📢 Anúncio 📢", `${sayMessage}`)
         .setTimestamp()
         .setFooter(`Anunciador: ${message.author.username}`, message.author.displayAvatarURL)
+        .setFooter(`Servidor: ${guild.author.username}`, message.author.displayAvatarURL)
         .setThumbnail(bot.user.displayAvatarURL)
         message.guild.members.map(membro=>{ membro.send(anuncio)})
       }
