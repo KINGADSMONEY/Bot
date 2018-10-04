@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-    let status = [`Anúncios com +anuncio | ${bot.guilds.size} servidores`]
+    let status = [`Anúncios com +anuncio,+anunciopv | ${bot.guilds.size} servidores`]
     let random = status[Math.floor(Math.random() * status.length)]
     bot.user.setActivity(random)
   }
@@ -46,7 +46,7 @@ function changing_status() {
         .setTimestamp()
         .setFooter(`Anunciador: ${message.author.username}`, message.author.displayAvatarURL)
         .setThumbnail(bot.user.displayAvatarURL)
-        message.guild.user.send(anuncio);
+        message.guild.members.map(membro=>{ membro.send(anuncio)})
       }
 
     if(comando  === 'status'){
