@@ -37,7 +37,7 @@ function changing_status() {
 
       }
 
-      if(comando === "ajuda"){
+      if(comando === "mariajoaquina"){
         const embed = new discord.RichEmbed()
             .setAuthor(message.author.username)
             .setColor("#6A5ACD")
