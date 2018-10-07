@@ -36,6 +36,24 @@ function changing_status() {
         message.channel.send(anuncio);
 
       }
+
+      if(comando === "ajuda"){
+        const embed = new discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setColor("#6A5ACD")
+            .setDescription("sla")
+            .setTitle("teste")
+            .setURL("https://discordapp.com/channels/406209503684722689/411602529680490496")
+            .setTimestamp()
+            .setImage(client.user.avatarURL)
+            .setFooter("testando")
+            .setThumbnail(message.author.avatarURL)
+            .addField("titulo","conteudo")
+            .addBlankField();
+       
+        message.channel.send(embed)
+       }
+
       if(comando === `anunciopv`) {
         message.delete();
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Desculpe, você não tem permissão para isto')
