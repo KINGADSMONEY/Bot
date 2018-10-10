@@ -40,7 +40,6 @@ function changing_status() {
       if(comando === `help`) {
         message.delete();
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Desculpe, você não tem permissão para isto')
-        const sayMessage = args.join(" ");
         let anuncio = new Discord.RichEmbed()
         .setColor("#FFFF00")
         .setTitle("📢 Ajuda 📢")
@@ -48,7 +47,7 @@ function changing_status() {
         .setTimestamp()
         .setFooter(`Executor do comando ${message.author.username}`)
         .setThumbnail(bot.user.displayAvatarURL)
-        message.guild.members.map(membro=>{ membro.send(anuncio)})
+        message.channel.send(anuncio);
       }
 
       if(comando === `anunciopv`) {
