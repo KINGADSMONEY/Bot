@@ -37,22 +37,19 @@ function changing_status() {
 
       }
 
-      if(comando === "mariajoaquina"){
-        const embed = new discord.RichEmbed()
-            .setAuthor(message.author.username)
-            .setColor("#6A5ACD")
-            .setDescription("sla")
-            .setTitle("teste")
-            .setURL("https://discordapp.com/channels/406209503684722689/411602529680490496")
-            .setTimestamp()
-            .setImage(client.user.avatarURL)
-            .setFooter("testando")
-            .setThumbnail(message.author.avatarURL)
-            .addField("titulo","conteudo")
-            .addBlankField();
-       
-        message.channel.send(embed)
-       }
+      if(comando === `help`) {
+        message.delete();
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Desculpe, você não tem permissão para isto')
+        const sayMessage = args.join(" ");
+        let anuncio = new Discord.RichEmbed()
+        .setColor("#FFFF00")
+        .setTitle("📢 Ajuda 📢")
+        .addField("")
+        .setTimestamp()
+        .setFooter(`Executor do comando ${message.author.username}`)
+        .setThumbnail(bot.user.displayAvatarURL)
+        message.guild.members.map(membro=>{ membro.send(anuncio)})
+      }
 
       if(comando === `anunciopv`) {
         message.delete();
