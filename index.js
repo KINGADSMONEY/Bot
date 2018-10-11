@@ -4,7 +4,7 @@ const config = require('./config.json');
 
 bot.on('ready', () => {
     console.log('Iniciado com sucesso')
-    bot.user.setPresence({ game: { name: 'https://givebot.weebly.com', type: 3, url: 'https://www.twitch.tv/ladonegro'} });
+    bot.user.setPresence({ game: { name: 'MANUTENÇÃO', type: 3, url: 'https://www.twitch.tv/ladonegro'} });
 })
 
 bot.on('message', async message => {
