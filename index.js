@@ -63,7 +63,17 @@ function changing_status() {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("Teste \n Oie")
+      .setDescription("+anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n +anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n +convidar - Você consegue o link para me convidar para seu servidor")
+      .setTimestamp()
+      .setFooter("Antenciosamente AnúncioBOT")
+      message.channel.send(embed);
+    }
+
+    if(comando === `convidar`) {
+      let embed = new Discord.RichEmbed()
+      .setColor("#FFFF00")
+      .setTitle("📢 Convidar 📢")
+      .setDescription("Para me convidar para seu servidor use este link. \n https://discordbots.org/bot/496078990352711700")
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
