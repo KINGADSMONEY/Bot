@@ -63,7 +63,7 @@ function changing_status() {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("+anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n +anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n +convidar - Você consegue o link para me convidar para seu servidor")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor")
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
