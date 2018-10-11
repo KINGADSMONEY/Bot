@@ -63,7 +63,7 @@ function changing_status() {
       let anuncio = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .addField("Teste")
+      .addField("Teste\nOie")
       .setTimestamp()
       .setFooter(`Executor do comando ${message.author.username}`)
       .setThumbnail(bot.user.displayAvatarURL)
