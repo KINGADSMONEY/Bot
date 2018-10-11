@@ -65,7 +65,6 @@ function changing_status() {
       .setTitle("📢 Ajuda 📢")
       .addField("Teste\nOie")
       .setTimestamp()
-      .setFooter(`Antenciosamente AnuncioBOT`)
       .setThumbnail(bot.user.displayAvatarURL)
       message.channel.send(anuncio);
     }
