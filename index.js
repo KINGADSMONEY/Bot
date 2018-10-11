@@ -37,17 +37,6 @@ function changing_status() {
 
       }
 
-      if(comando === `help`) {
-        let anuncio = new Discord.RichEmbed()
-        .setColor("#FFFF00")
-        .setTitle("📢 Ajuda 📢")
-        .addField("")
-        .setTimestamp()
-        .setFooter(`Executor do comando ${message.author.username}`)
-        .setThumbnail(bot.user.displayAvatarURL)
-        message.channel.send(anuncio);
-      }
-
       if(comando === `anunciopv`) {
         message.delete();
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Desculpe, você não tem permissão para isto')
@@ -69,15 +58,17 @@ function changing_status() {
       message.channel.send(`Agora estou jogando ${stats}`)
      }
 
-     if(comando === `help`) {
-     exports.run = (client,message,args)=>{
-     var embed = new discord.RichEmbed()
-     .setAuthor(message.author.username)
-     .setColor('#FFFAFA');
 
- message.channel.send(embed)
-}
-  }
+     if(comando === `help`) {
+      let anuncio = new Discord.RichEmbed()
+      .setColor("#FFFF00")
+      .setTitle("📢 Ajuda 📢")
+      .addField("Teste")
+      .setTimestamp()
+      .setFooter(`Executor do comando ${message.author.username}`)
+      .setThumbnail(bot.user.displayAvatarURL)
+      message.channel.send(anuncio);
+    }
 
     try {
       let commandFile = require(`./comandos/${command}.js`);
