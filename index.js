@@ -67,8 +67,20 @@ function changing_status() {
       if(!stats) return message.channel.send("O que quer que eu jogue?");
       bot.user.setActivity(stats, {type: "PLAYING"});
       message.channel.send(`Agora estou jogando ${stats}`)
-    }
-    
+     }
+
+     if(comando === `help`) {
+      var discord = require('discord.js')
+
+     exports.run = (client,message,args)=>{
+     var embed = new discord.RichEmbed()
+     .setAuthor(message.author.username)
+     .setColor('#FFFAFA');
+
+ message.channel.send(embed)
+}
+  }
+
     try {
       let commandFile = require(`./comandos/${command}.js`);
       commandFile.run(bot, message, args);
