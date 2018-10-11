@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`MANUTENÇÃO`]
+  let status = [`!help - ${bot.guilds.size} servidores.`]
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
 }
@@ -48,6 +48,39 @@ bot.on('message', async message => {
       .setFooter(`Anunciador: ${message.author.username} \n | Servidor: ${message.guild.name}`)
       .setThumbnail(bot.user.displayAvatarURL)
       message.guild.members.map(membro=>{ membro.send(anuncio)})
+    }
+
+    if(comando === `help`) {
+      let embed = new Discord.RichEmbed()
+      .setColor("#FFFF00")
+      .setTitle("📢 Ajuda 📢")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor")
+      .setTimestamp()
+      .setFooter("Antenciosamente AnúncioBOT")
+      message.channel.send(embed);
+    }
+
+    if(comando === `convidar`) {
+      let embed = new Discord.RichEmbed()
+      .setColor("#FFFF00")
+      .setTitle("📢 Ajuda 📢")
+      .setDescription("Para me convidar para seu servidor você deve usar esse link.\n\n https://discordbots.org/bot/496078990352711700")
+      .setTimestamp()
+      .setFooter("Antenciosamente AnúncioBOT")
+      message.channel.send(embed);
+    }
+
+    if(comando === `mensagem`) {
+      message.delete();
+      return message.reply('Sua mensagem foi enviada para meu desenvolvedor :heart: ')
+      const sayMessage = args.join(" ");
+      let anuncio = new Discord.RichEmbed()
+      .setColor("#FFFF00")
+      .addField("📢 Mensagem 📢", `${sayMessage}`)
+      .setTimestamp()
+      .setFooter(`Anunciador: ${message.author.username} \n | Servidor: ${message.guild.name}`)
+      .setThumbnail(bot.user.displayAvatarURL)
+      message.guild.members.find(m => m.id === "430093309617111063").send(anuncio);
     }
 
 });
