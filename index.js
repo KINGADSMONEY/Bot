@@ -64,8 +64,8 @@ function changing_status() {
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
       .addField("Teste \n Oie")
-      .setThumbnail(bot.user.displayAvatarURL)
-      message.channel.send(anuncio);
+      .setTimestamp()
+      message.channel.send(embed);
     }
 
     try {
