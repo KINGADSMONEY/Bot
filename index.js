@@ -2,26 +2,18 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require('./config.json');
 
-function changing_status() {
-    let status = [`Anúncios com +anuncio,+anunciopv | ${bot.guilds.size} servidores`]
-    let random = status[Math.floor(Math.random() * status.length)]
-    bot.user.setActivity(random)
-  }
-  
-  bot.on("ready", () => {
-    console.log( `${bot.user.username} Online` );
-    setInterval(changing_status, 9000);
-  })
+bot.on('ready', () => {
+    console.log('Iniciado com sucesso')
+    bot.user.setPresence({ game: { name: '+help', type: 3, url: 'https://www.twitch.tv/ladonegro'} });
+})
 
-  bot.on('message', async message => {
+bot.on('message', async message => {
 
-    if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
-    if(!message.content.startsWith(config.prefix)) return;
-
-
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const comando = args.shift().toLowerCase();
+  if(message.channel.id == "495662040300519475"){
+    message.react(':sucesso:495590190950383626').then(r=>{
+      message.react(':error:495662124517949440')
+    })
+    };
 
     if(comando === `anuncio`) {
         message.delete();
@@ -50,34 +42,14 @@ function changing_status() {
         message.guild.members.map(membro=>{ membro.send(anuncio)})
       }
 
-    if(comando  === 'status'){
-      if (message.author.id !== '430093309617111063') return;
-      let stats = args.join(" ");
-      if(!stats) return message.channel.send("O que quer que eu jogue?");
-      bot.user.setActivity(stats, {type: "PLAYING"});
-      message.channel.send(`Agora estou jogando ${stats}`)
-     }
+    if (message.author.bot) return;
+    if (!message.content.startsWith(config.prefix)) return;
 
+    let command = message.content.split(" ")[0];
+    command = command.slice(config.prefix.length);
 
-     if(comando === `help`) {
-      let embed = new Discord.RichEmbed()
-      .setColor("#FFFF00")
-      .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor")
-      .setTimestamp()
-      .setFooter("Antenciosamente AnúncioBOT")
-      message.channel.send(embed);
-    }
-
-    if(comando === `convidar`) {
-      let embed = new Discord.RichEmbed()
-      .setColor("#FFFF00")
-      .setTitle("📢 Convidar 📢")
-      .setDescription("Para me convidar para seu servidor use este link. \n https://discordbots.org/bot/496078990352711700")
-      .setTimestamp()
-      .setFooter("Antenciosamente AnúncioBOT")
-      message.channel.send(embed);
-    }
+    let args = message.content.split(" ").slice(1);
+    //
 
     try {
       let commandFile = require(`./comandos/${command}.js`);
@@ -86,5 +58,6 @@ function changing_status() {
       console.error(err);
     }
 
-  });
+})
+
 bot.login(config.token);
