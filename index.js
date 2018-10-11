@@ -63,7 +63,7 @@ function changing_status() {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .addField("Teste \n Oie")
+      .setDescription("Teste \n Oie")
       .setTimestamp()
       message.channel.send(embed);
     }
