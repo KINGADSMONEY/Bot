@@ -60,7 +60,7 @@ function changing_status() {
 
 
      if(comando === `help`) {
-      let anuncio = new Discord.RichEmbed()
+      let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
       .addField("Teste \n Oie")
