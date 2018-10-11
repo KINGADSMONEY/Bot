@@ -63,8 +63,7 @@ function changing_status() {
       let anuncio = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .addField("Teste\nOie")
-      .setTimestamp()
+      .addField("Teste \n Oie")
       .setThumbnail(bot.user.displayAvatarURL)
       message.channel.send(anuncio);
     }
