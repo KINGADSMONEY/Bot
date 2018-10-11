@@ -54,7 +54,7 @@ bot.on('message', async message => {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n")
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
@@ -74,7 +74,6 @@ bot.on('message', async message => {
       message.delete();
       const sayMessage = args.join(" ");
       let anuncio = new Discord.RichEmbed()
-      return message.reply('Sua mensagem foi enviada para meu desenvolvedor :heart: ')
       .setColor("#FFFF00")
       .addField("📢 Mensagem 📢", `${sayMessage}`)
       .setTimestamp()
