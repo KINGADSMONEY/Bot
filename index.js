@@ -38,8 +38,6 @@ function changing_status() {
       }
 
       if(comando === `help`) {
-        message.delete();
-        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Desculpe, você não tem permissão para isto')
         let anuncio = new Discord.RichEmbed()
         .setColor("#FFFF00")
         .setTitle("📢 Ajuda 📢")
@@ -71,5 +69,12 @@ function changing_status() {
       message.channel.send(`Agora estou jogando ${stats}`)
     }
     
+    try {
+      let commandFile = require(`./comandos/${command}.js`);
+      commandFile.run(bot, message, args);
+    } catch (err) {
+      console.error(err);
+    }
+
   });
 bot.login(config.token);
