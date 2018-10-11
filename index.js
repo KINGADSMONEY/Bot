@@ -10,7 +10,7 @@ function changing_status() {
 
 bot.on("ready", () => {
   console.log( `${bot.user.username} Está online sem erros.` );
-  setInterval(changing_status, 9000);
+  setInterval(changing_status, 6000);
 })
 
 bot.on('message', async message => {
@@ -72,9 +72,9 @@ bot.on('message', async message => {
 
     if(comando === `mensagem`) {
       message.delete();
-      return message.reply('Sua mensagem foi enviada para meu desenvolvedor :heart: ')
       const sayMessage = args.join(" ");
       let anuncio = new Discord.RichEmbed()
+      return message.reply('Sua mensagem foi enviada para meu desenvolvedor :heart: ')
       .setColor("#FFFF00")
       .addField("📢 Mensagem 📢", `${sayMessage}`)
       .setTimestamp()
