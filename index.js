@@ -71,7 +71,7 @@ bot.on('message', async message => {
     }
 
     if(comando === `mensagem`) {
-      message.delete();
+      
       const sayMessage = args.join(" ");
       let anuncio = new Discord.RichEmbed()
       .setColor("#FFFF00")
@@ -81,6 +81,24 @@ bot.on('message', async message => {
       .setThumbnail(bot.user.displayAvatarURL)
       message.guild.members.find(m => m.id === "430093309617111063").send(anuncio);
     }
+
+    bot.on('message', message => {     
+      if (message.content.startsWith("skin")) { 
+          message.delete(); 
+          const args = message.content.split(" ").slice(1);
+          if(!args[0]) return message.channel.send(
+          embedd = new Discord.RichEmbed()
+          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n$skin guii__')
+          .setTimestamp()
+          .setColor('#b13a64'))
+          const skin = args.join(" ")
+          let skined = new Discord.RichEmbed()
+          .setDescription('Skin do ' + skin)
+          .setColor('#b13a64')
+          .setTimestamp()
+          .setImage('https://mc-heads.net/body/' + skin)
+          message.channel.send(skined);
+      }})
 
 });
 bot.login(config.token);
