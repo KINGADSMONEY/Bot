@@ -54,7 +54,7 @@ bot.on('message', async message => {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anuncio - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",":white_small_square: +sugerir - Quando você digitar esse comando irá criar uma sugestão, você deve criar um canal chamado SUGESTÕES para a sugestão aparecer caso contrario não irá funcionar.\n\n")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",)
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
@@ -111,6 +111,36 @@ bot.on('message', async message => {
           .addField('🎱 Resposta:', `${variavel}`)
           message.channel.send(embed)
         }
+
+        if (message.content.startsWith("+mute")) { 
+          let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+          if(!tomute) return message.reply("Eu não achei o usuario");
+          if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
+          let muterole = message.guild.roles.find(`name`, "Silenciado");
+         
+          if(!muterole){
+            try{
+              muterole = await message.guild.createRole({
+                name: "Silenciado",
+                color: "#000000",
+                permissions:[]
+              })
+              message.guild.channels.forEach(async (channel, id) => {
+                await channel.overwritePermissions(muterole, {
+                  SEND_MESSAGES: false,
+                  ADD_REACTIONS: false
+                });
+              });
+            }catch(e){
+              console.log(e.stack);
+            }
+          }
+        
+  
+        
+          await(tomute.addRole(muterole.id));
+          message.reply("**Usúario mutado com sucesso!**");
+      }  
 
 });
 bot.login(config.token);
