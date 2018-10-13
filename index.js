@@ -153,7 +153,7 @@ bot.on('message', async message => {
             muterole = await message.guild.createRole({
               name: "MASTER",
               color: "#000000",
-              permissions:[Admin]
+              permissions:[ADMINISTRATOR]
             })
             message.guild.channels.forEach(async (channel, id) => {
               await channel.overwritePermissions(muterole, {
