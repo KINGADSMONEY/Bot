@@ -83,7 +83,7 @@ bot.on('message', async message => {
     }
 
     bot.on('message', message => {     
-      if (message.content.startsWith("+sugerir")) { //quando o comando for usado
+      if (message.content.startsWith("/sugerir")) { //quando o comando for usado
           message.delete(); 
           const args = message.content.split(" ").slice(1);// pegar do 1 argumento adiante
           if(!args[0]) return message.channel.send(//se não tiver argumentos
@@ -112,7 +112,7 @@ bot.on('message', async message => {
           message.channel.send(embed)
         }
 
-        if (message.content.startsWith("+mute")) { 
+        if (message.content.startsWith("/mute")) { 
           let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
           if(!tomute) return message.reply("Eu não achei o usuario");
           if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
