@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`|Quer saber meus comandos? +help`,`|Estou em ${bot.guilds.size} servidores.`,`|Me convide usando +convite`,`|Fui feito pelo Guii__#8061`,`|Mande uma mensagem para meu dono +mensagem`]
+  let status = [`|Quer saber meus comandos? +help|`,`|Estou em ${bot.guilds.size} servidores.|`,`|Me convide usando +convite|`,`|Fui feito pelo Guii__#8061|`,`|Mande uma mensagem para meu dono +mensagem|`,`|Está solitario faça perguntar para mim +perguntar|`]
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
 }
@@ -54,7 +54,7 @@ bot.on('message', async message => {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +skin - Consegue ver a skin da pessoa citada.\n\n")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +skin - Consegue ver a skin da pessoa citada.\n\n\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.")
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
@@ -98,7 +98,19 @@ bot.on('message', async message => {
           .setTimestamp()
           .setImage('https://mc-heads.net/body/' + skin)
           message.channel.send(skined);
-      }})
+        }})
+
+        if(comando === `perguntar`) {
+          var respostas = [`Sim`, 'Não', 'Sua mãe', 'Posto ipiranga', 'RedeSky', 'Claro que sim', 'Eu te amo', 'Várias vezes', 'Eu slá porra', 'Nunca nem vi', 'Que viage é essa?', 'Guilherme o melhor', 'Você é gay xiu', 'Revista playboy', 'Bebe', 'Felipe Neto', 'Luccas Netto', 'Anuncio igual sua mãe', 'Nem copiei ninguém', 'Talvez', 'Imagina...', 'Eu sei...', 'Claro que não', 'Seu idiota']
+          var variavel = respostas[Math.floor(Math.random() * respostas.length)]
+      
+          let embed = new Discord.RichEmbed()
+          .setColor('RANDOM')
+          .setAuthor(message.author.tag, message.author.displayAvatarURL)
+          .addField('❓ Pergunta:', `${args.join(" ")}`)
+          .addField('🎱 Resposta:', `${variavel}`)
+          message.channel.send(embed)
+      }
 
 });
 bot.login(config.token);
