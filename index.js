@@ -54,7 +54,7 @@ bot.on('message', async message => {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+sugerir - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",":white_small_square: +sugerir - Quando você digitar esse comando irá criar uma sugestão, você deve criar um canal chamado SUGESTÕES para a sugestão aparecer caso contrario não irá funcionar.\n\n")
+      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anuncio - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",":white_small_square: +sugerir - Quando você digitar esse comando irá criar uma sugestão, você deve criar um canal chamado SUGESTÕES para a sugestão aparecer caso contrario não irá funcionar.\n\n")
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
@@ -88,7 +88,7 @@ bot.on('message', async message => {
           const args = message.content.split(" ").slice(1);// pegar do 1 argumento adiante
           if(!args[0]) return message.channel.send(//se não tiver argumentos
           embedd = new Discord.RichEmbed()//falar isso:
-          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n$sugerir tenha mais staffers')
+          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n+Sugerir tenha mais staffers')
           .setTimestamp()
           .setColor('#b13a64'))//se estiver tudo dentro dos parametros falar a sugestão
           let sugestão = new Discord.RichEmbed()
