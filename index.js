@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`|Quer saber meus comandos? +help|`,`|Estou em ${bot.guilds.size} servidores.|`,`|Me convide usando +convite|`,`|Fui feito pelo Guii__#8061|`,`|Mande uma mensagem para meu dono +mensagem|`,`|Está solitario faça perguntar para mim +perguntar|`]
+  let status = [`|Quer saber meus comandos? /help|`,`|Estou em ${bot.guilds.size} servidores.|`,`|Me convide usando /convite|`,`|Fui feito pelo Guii__#8061|`,`|Mande uma mensagem para meu dono /mensagem|`,`|Está solitario faça perguntar para mim /perguntar|`]
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
 }
