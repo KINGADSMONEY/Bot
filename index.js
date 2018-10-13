@@ -88,7 +88,7 @@ bot.on('message', async message => {
           const args = message.content.split(" ").slice(1);// pegar do 1 argumento adiante
           if(!args[0]) return message.channel.send(//se não tiver argumentos
           embedd = new Discord.RichEmbed()//falar isso:
-          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n+Sugerir tenha mais staffers')
+          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n+sugerir tenha mais staffers')
           .setTimestamp()
           .setColor('#b13a64'))//se estiver tudo dentro dos parametros falar a sugestão
           let sugestão = new Discord.RichEmbed()
