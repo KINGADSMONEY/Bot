@@ -10,7 +10,7 @@ function changing_status() {
 }
 
 bot.on("ready", () => {
-  console.log( `${bot.user.username} Está online sem erros.` );
+  console.log( `${bot.user.username} Está online sem erros!` );
   setInterval(changing_status, 6000);
 })
 
@@ -102,7 +102,7 @@ bot.on('message', async message => {
           })}})
 
         if(comando === `perguntar`) {
-          var respostas = [`Não te interresa.`, 'Filho da puta', 'Nem existe numero pra isso', 'Umas 300mil vezes', '12200000',`Sim`, 'Não', 'Sua mãe', 'Posto ipiranga', 'RedeSky', 'Claro que sim', 'Eu te amo', 'Várias vezes', 'Eu slá porra', 'Nunca nem vi', 'Que viage é essa?', 'Guilherme o melhor', 'Você é gay xiu', 'Revista playboy', 'Bebe', 'Felipe Neto', 'Luccas Netto', 'Anuncio igual sua mãe', 'Nem copiei ninguém', 'Talvez', 'Imagina...', 'Eu sei...', 'Claro que não', 'Seu idiota']
+          var respostas = [`Não te interessa.`, 'Filho da puta', 'Nem existe numero pra isso', 'Umas 300mil vezes', '12200000',`Sim`, 'Não', 'Sua mãe', 'Posto ipiranga', 'RedeSky', 'Claro que sim', 'Eu te amo', 'Várias vezes', 'Eu slá porra', 'Nunca nem vi', 'Que viage é essa?', 'Guilherme o melhor', 'Você é gay xiu', 'Revista playboy', 'Bebe', 'Felipe Neto', 'Luccas Netto', 'Anuncio igual sua mãe', 'Nem copiei ninguém', 'Talvez', 'Imagina...', 'Eu sei...', 'Claro que não', 'Seu idiota']
           var variavel = respostas[Math.floor(Math.random() * respostas.length)]
       
           let embed = new Discord.RichEmbed()
