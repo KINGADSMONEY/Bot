@@ -101,7 +101,7 @@ bot.on('message', async message => {
           .addField(`Infelizmente o ${message.mentions.users.first()} foi morto pelo DeathNote`)
           .addField("Morreu de:",reason)
           .addField("Assassino:", `${message.author.tag}`)
-          .setThumbnail("http://meow-meow-meowstic.tumblr.com/post/97752097995/bang")
+          .setThumbnail("https://media.giphy.com/media/Lhtui7nKVVeXS/giphy.gif")
           message.channel.send(embed)
         }
 
