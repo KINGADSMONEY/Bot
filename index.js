@@ -71,6 +71,16 @@ bot.on('message', async message => {
       message.channel.send(embed);
     }
 
+    if(comando === `doar`) {
+      let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("📢 Ajuda 📢")
+      .setDescription("Quero comprar um chocolate mais meu papai não deixou dinheiro me doa 1 real? <3\n\nhttps://www.mercadopago.com/mlb/checkout/start?pref_id=271468214-1308944f-1158-4ea2-9017-0a786784d688")
+      .setTimestamp()
+      .setFooter("Antenciosamente AnúncioBOT")
+      message.channel.send(embed);
+    }
+
     if(comando === `mensagem`) {
       
       const sayMessage = args.join(" ");
