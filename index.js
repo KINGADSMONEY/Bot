@@ -145,5 +145,9 @@ bot.on('message', async message => {
           message.reply("**Usúario mutado com sucesso!**");
       }  
 
+      if(comando === '<@!496078990352711700>'){
+        message.reply("**:sparkles: Acho que você está perdido, para saber meus comandos, use /ajuda.:sparkles:**")
+        }
+
 });
 bot.login(config.token);
