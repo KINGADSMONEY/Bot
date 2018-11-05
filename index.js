@@ -145,7 +145,7 @@ bot.on('message', async message => {
           message.reply("**Usúario mutado com sucesso!**");
       }  
 
-      if (message.content.startsWith("<@!496078990352711700>")) { 
+      if (message.content.startsWith("@Anuncio BOT")) { 
         message.reply("**:sparkles: Acho que você está perdido, para saber meus comandos, use /ajuda.:sparkles:**")
         }
 
