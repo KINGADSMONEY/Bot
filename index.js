@@ -145,9 +145,6 @@ bot.on('message', async message => {
           message.reply("**Usúario mutado com sucesso!**");
       }  
 
-      if (message.content.startsWith("@Anuncio BOT")) { 
-        message.reply("**:sparkles: Acho que você está perdido, para saber meus comandos, use /ajuda.:sparkles:**")
-        }
 
 });
 bot.login(config.token);
