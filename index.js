@@ -51,6 +51,51 @@ bot.on('message', async message => {
       message.guild.members.map(membro=>{ membro.send(anuncio)})
     }
 
+
+    desenvolvedores = ['349031913375137794']
+exports.run = (Toon, message, args, bot) => {
+    let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+    if (!desenvolvedores.includes(message.author.id))
+        return message.channel.send({
+            embed: {
+                color: 0x4248f4,
+                description: "Sem permissão"
+            }
+        });
+    let DMALL = args.join(" ").slice(0);
+    if (!DMALL) return message.channel.send({
+        embed: {
+            color: 0x4248f4,
+            description: `${message.member} por favor coloque uma msg.`
+        }
+    });
+    bot.guilds.map(g =>{
+        let channel1 = 1;
+        g.channels.map(a => {
+            if (channel1 == 1) {
+                a.send({
+                    embed: {
+                        color: 0x4248f4,
+                        title: `${g.name}`,
+                        description: `${DMALL}`
+                    }
+                }
+                )
+                channel1 = 0;
+
+            }
+        })})
+    message.channel.send({
+        embed: {
+            color: 0x4248f4,
+            description: "Todos receberam."
+        }
+    });
+}
+exports.help = {
+    name: 'teste'
+}
+
     if(comando === `help`) {
       let embed = new Discord.RichEmbed()
       .setColor("#FFFF00")
