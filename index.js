@@ -198,6 +198,29 @@ if(comando === "avatar"){
   message.channel.send(msg);
 }
 
+if(comando === "botinfo"){
+  const moment = require('moment')
+  moment.locale("pt-BR")
+  require("moment-duration-format")
+      let duration = moment.duration(bot.uptime).format('D [d], H [h], m [m], s [s]');
+      
+      let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .addField(':robot: Função:', `Ajuda os membros.`)
+    .setTitle(`Informações do ${bot.user.tag}`)
+    .setColor("0xff0000")
+    .setFooter("©RedeShockedMc - Todos os direitos reservados", message.author.avatarURL)
+    .setThumbnail(bicon)
+    .addField("Estou em:",` ${bot.guilds.size} servidores!.`)
+    .addField("Estou com:",` ${bot.users.size} usuários ?`)
+    .addField("Nome do Bot:", bot.user.username)
+    .addField("Estou online à:",`${duration}`)
+    .addField("Criado em:",`${moment(bot.user.createdAt).format('LLLL')}`)
+    .addField("ID do bot",bot.user.id )
+    .addField("Dono do BOT:", `<@450688165926273024>`) 
+     return message.channel.send(botembed);
+  }
+
 
         if (message.content.startsWith("/mute")) { 
           let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
