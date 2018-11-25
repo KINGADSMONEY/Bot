@@ -226,5 +226,19 @@ if(comando === "serverinfo"){
     return message.channel.send(serverembed);
 }
 
+if(comando === "avatar"){
+
+  let usuario = message.guild.member(message.mentions.users.first());// || message.guild.members.get(args[0]));
+  //if(!usuario) return errors.cantfindUser(message.channel);
+
+  let semnada = new Discord.RichEmbed()
+  .setDescription(`Clique [aqui](${message.author.avatarURL}) para pegar o link da foto.`)
+  .setAuthor(`??? Imagem de perfil`)//Clique [aqui](${usuario.user.avatarURL}) para pegar o link da foto.`)
+  .setColor("#bc0000")
+  .setImage(message.author.avatarURL)
+  .setTimestamp()
+.setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+}
+
 });
 bot.login(config.token);
