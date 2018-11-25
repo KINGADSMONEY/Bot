@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`|Me doa 1 real pra comprar chocolate ? /doar|`,`|Quer comprar um bot? ADD Guii__#8061|`,`|Quer saber meus comandos? /help|`,`|Estou em ${bot.guilds.size} servidores.|`,`|Me convide usando /convidar|`,`|Fui feito pelo yGuii_XD#8061|`,`|Mande uma mensagem para meu dono /mensagem|`,`|Está solitario faça perguntar para mim /perguntar|`]
+  let status = [`/ajuda - `]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -138,7 +138,7 @@ bot.on('message', async message => {
       }  
 
       if(comando === "ajuda"){
-        message.channel.send(":discord~1: Verifique seu privado :discord~1: ");
+        message.channel.send(":fire: Verifique seu privado :fire: ");
         
             const Aviso = args.join(" ");
             let semnada = new Discord.RichEmbed()
