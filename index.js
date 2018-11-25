@@ -237,7 +237,7 @@ if(comando === "botinfo"){
     .addField(':robot: Função:', `Ajuda os membros.`)
     .setTitle(`Informações do ${bot.user.tag}`)
     .setColor("0xff0000")
-    .setFooter("©RedeShockedMc - Todos os direitos reservados", message.author.avatarURL)
+    .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
     .setThumbnail(bicon)
     .addField("Estou em:",` ${bot.guilds.size} servidores!.`)
     .addField("Estou com:",` ${bot.users.size} usuários ?`)
