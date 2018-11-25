@@ -150,7 +150,7 @@ bot.on('message', async message => {
       }  
 
       if(comando === "ajuda"){
-        message.channel.send(" Enviamos no seu privado");
+        message.channel.send(":discord~1: Verifique seu privado :discord~1: ");
         
             const Aviso = args.join(" ");
             let semnada = new Discord.RichEmbed()
