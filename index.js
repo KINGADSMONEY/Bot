@@ -52,49 +52,7 @@ bot.on('message', async message => {
     }
 
 
-    desenvolvedores = ['349031913375137794']
-exports.run = (Toon, message, args, bot) => {
-    let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-    if (!desenvolvedores.includes(message.author.id))
-        return message.channel.send({
-            embed: {
-                color: 0x4248f4,
-                description: "Sem permissão"
-            }
-        });
-    let DMALL = args.join(" ").slice(0);
-    if (!DMALL) return message.channel.send({
-        embed: {
-            color: 0x4248f4,
-            description: `${message.member} por favor coloque uma msg.`
-        }
-    });
-    bot.guilds.map(g =>{
-        let channel1 = 1;
-        g.channels.map(a => {
-            if (channel1 == 1) {
-                a.send({
-                    embed: {
-                        color: 0x4248f4,
-                        title: `${g.name}`,
-                        description: `${DMALL}`
-                    }
-                }
-                )
-                channel1 = 0;
 
-            }
-        })})
-    message.channel.send({
-        embed: {
-            color: 0x4248f4,
-            description: "Todos receberam."
-        }
-    });
-}
-exports.help = {
-    name: 'teste'
-}
 
     if(comando === `help`) {
       let embed = new Discord.RichEmbed()
@@ -189,6 +147,38 @@ exports.help = {
           await(tomute.addRole(muterole.id));
           message.reply("**Usúario mutado com sucesso!**");
       }  
+
+      const Discord = require("discord.js");
+const bot = new Discord.Client({disableEveryone: false});
+
+module.exports.run = async (bot, message, args) => {
+
+ 
+message.channel.send(" Enviamos no seu privado");
+
+    const Aviso = args.join(" ");
+    let semnada = new Discord.RichEmbed()
+    .setColor("edac2a")
+    .setAuthor(bot.user.username, bot.user.avatarURL)
+ .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+    .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square:/doar - Me doe 1 real para mim comprar um **CHOCOLATE**, caso me doe seu nome é sua # irá aparecer no meus **STATUS** <3\n\n")
+
+    if(!Aviso)
+    return message.author.send(semnada)
+    message.delete().catch();
+    let aviso = new Discord.RichEmbed()
+    .setColor("edac2a")
+    .setAuthor("Toxic - Pv", "https://cdn.discordapp.com/attachments/409846357982183434/429837842697682955/emoji.png", "toxic.com.br")
+    .setDescription(Aviso)
+      
+    .setTimestamp()
+    .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+    return message.channel.send(aviso);
+  }
+  
+module.exports.help = {
+    name: "ajuda"
+  }
 
 
 });
