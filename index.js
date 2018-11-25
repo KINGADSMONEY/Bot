@@ -9,10 +9,6 @@ function changing_status() {
   bot.user.setActivity(random)
 }
 
-client.on("guildCreate", guild => {
-  console.log(`Acabei de entrar no servidor chamado: ${guild.name}`);
-  client.user.setActivity(`Acabei de entrar no ${guild.name}`);
-});
 
 bot.on("ready", () => {
   console.log( `${bot.user.username} Está online sem erros!` );
@@ -152,25 +148,6 @@ bot.on('message', async message => {
           await(tomute.addRole(muterole.id));
           message.reply("**Usúario mutado com sucesso!**");
       }  
-
-      client.on("message", message => {
-        if (message.author.bot) return;
-        if (!message.content.startsWith(config.prefix)) return;
-       
-        let command = message.content.split(" ")[0];
-        command = command.slice(config.prefix.length);
-       
-        let args = message.content.split(" ").slice(1);
-        
-        try {
-          let commandFile = require(`./commands/${command}.js`);
-          commandFile.run(client, message, args);
-        } catch (err) {
-          console.error(err);
-        }
-       
-      });
-
 
 });
 bot.login(config.token);
