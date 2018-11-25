@@ -206,7 +206,7 @@ if(comando === "serverinfo"){
     .setColor("4a2aed")
     .setThumbnail(sicon)
     .setTitle(`${message.guild.name}`)
-    .setFooter("©RedeZonck - Todos os direitos reservados", message.author.avatarURL) 
+    .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL) 
     .addField(`:hammer_pick: Informações sobre o discord`, "Veja as informações do servidor!")
     .addField(":upside_down: __Guild__ __ID__:", message.guild.id , false )
     .addField(":gem: __Dono__ :", message.guild.owner , true )
