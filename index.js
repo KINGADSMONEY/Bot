@@ -128,7 +128,7 @@ bot.on('message', async message => {
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
        .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.")
+          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.")
       
           if(!Aviso)
           return message.author.send(semnada)
@@ -257,6 +257,39 @@ if(comando === "botinfo"){
      return message.channel.send(botembed);
       
   }
+
+  if(comando === "hospedagem"){
+    const os = require('os')
+    const cpuStat = require("cpu-stat");
+    const moment = require("moment") 
+    moment.locale('pt-BR');
+    
+     
+    
+                let { version } = require("discord.js");
+         
+                cpuStat.usagePercent(function(err, percent, seconds) {
+                  if (err) {
+                    return console.log(err);
+                  }
+                 
+                 let secs = Math.floor(bot.uptime % 60);
+                 let days = Math.floor((bot.uptime % 31536000) / 86400);
+                 let hours = Math.floor((bot.uptime / 3600) % 24);
+                 let mins = Math.floor((bot.uptime / 60) % 60);
+    
+                  let embedStats = new Discord.RichEmbed()
+                 .setTitle("**Informações sobre minha Host:**")
+                 .addField("🌡 **Memoria Consumida**", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
+                 .addField(":books: **Linguagem**", `Discord.js\nv${version}`, true)
+                 .addField("🚀 **CPU**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
+                 .addField("🚀 **CPU Consumida**", `\`${percent.toFixed(2)}%\``,true)
+                 .addField(":straight_ruler: **Arquitetura**", `\`${os.arch()}\``,true)
+                 .addField(":desktop: **Plataforma**", `\`\`${os.platform()}\`\``,true)
+                 .setColor([54, 57, 63])
+                 message.channel.send(embedStats)
+                })
+    }
 
 
 });
