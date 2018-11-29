@@ -60,7 +60,7 @@ bot.on('message', async message => {
         .setColor("edac2a")
         .setAuthor(bot.user.username, bot.user.avatarURL)
      .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-        .setDescription("Para me convidar para seu servidor você deve usar esse link.\n\n https://discordbots.org/bot/496078990352711700")
+        .setDescription("Para me convidar para seu servidor você deve usar esse link.\n\n https://discordapp.com/oauth2/authorize?client_id=517797573302419496&scope=bot&permissions=8")
     
         if(!Aviso)
         return message.author.send(semnada)
