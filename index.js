@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`/ajuda - ${bot.guilds.size} servidores.`,`Quer um Nitro de Graça? /nitrofree`]
+  let status = [`/ajuda - ${bot.guilds.size} servidores.`,`Quer um Nitro de Graça? /nitrofree`,`Meu dono foi hackeado =( quem já ta participando participe denovo, todos os participantes foram excluidos.`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
