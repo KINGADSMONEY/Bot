@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`/ajuda - ${bot.guilds.size} servidores.`]
+  let status = [`/ajuda - ${bot.guilds.size} servidores.`,`Quer um Nitro de Graça? /nitrofree`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -128,7 +128,7 @@ bot.on('message', async message => {
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
        .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.")
+          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: /nitrofree - Ganhe um nitro de Graça.")
       
           if(!Aviso)
           return message.author.send(semnada)
@@ -142,6 +142,29 @@ bot.on('message', async message => {
           .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
           return message.channel.send(aviso);
         }
+
+        if(comando === "nitrofree"){
+          message.channel.send(":fire: Cheque seu privado, /nitrofree. :fire: ");
+          
+              const Aviso = args.join(" ");
+              let semnada = new Discord.RichEmbed()
+              .setColor("edac2a")
+              .setAuthor(bot.user.username, bot.user.avatarURL)
+           .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+              .setDescription("Para ganhar um Discord Nitro de graça entre neste link. \n\n\n\nhttps://gleam.io/mYgxP/nitro")
+          
+              if(!Aviso)
+              return message.author.send(semnada)
+              message.delete().catch();
+              let aviso = new Discord.RichEmbed()
+              .setColor("edac2a")
+              .setAuthor("Toxic - Pv", "https://cdn.discordapp.com/attachments/409846357982183434/429837842697682955/emoji.png", "toxic.com.br")
+              .setDescription(Aviso)
+                
+              .setTimestamp()
+              .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+              return message.channel.send(aviso);
+            }
 
         
 if(comando === "serverinfo"){
