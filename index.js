@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`/ajuda - ${bot.guilds.size} servidores.`,`Quer um Nitro de Graça? /nitrofree`,`Meu dono foi hackeado =( quem já ta participando participe denovo, todos os participantes foram excluidos.`]
+  let status = [`f!ajuda - Saiba mais sobre mim.`,`jogar.freneticmc.ml`,`f!info - Saiba minhas info.`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -47,33 +47,11 @@ bot.on('message', async message => {
     .setColor("#FFFF00")
     .addField("📢 Anúncio 📢", `${sayMessage}`)
     .setTimestamp()
-    .setFooter(`Anunciador: ${message.author.username} \n | Servidor: ${message.guild.name}`)
+    .setFooter(`Anunciador: ${message.author.username} \n`)
     .setThumbnail(bot.user.displayAvatarURL)
     message.guild.members.map(membro=>{ membro.send(anuncio)})
   }
 
-  if(comando === "convidar"){
-    message.channel.send(":fire: Mandei meu invite em seu privado, para evitar divulgação.. :fire: ");
-    
-        const Aviso = args.join(" ");
-        let semnada = new Discord.RichEmbed()
-        .setColor("edac2a")
-        .setAuthor(bot.user.username, bot.user.avatarURL)
-     .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-        .setDescription("Para me convidar para seu servidor você deve usar esse link.\n\n https://discordapp.com/oauth2/authorize?client_id=517797573302419496&scope=bot&permissions=8")
-    
-        if(!Aviso)
-        return message.author.send(semnada)
-        message.delete().catch();
-        let aviso = new Discord.RichEmbed()
-        .setColor("edac2a")
-        .setAuthor("Toxic - Pv", "https://cdn.discordapp.com/attachments/409846357982183434/429837842697682955/emoji.png", "toxic.com.br")
-        .setDescription(Aviso)
-          
-        .setTimestamp()
-        .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-        return message.channel.send(aviso);
-      }
 
 
       if(comando === `perguntar`) {
@@ -121,14 +99,14 @@ bot.on('message', async message => {
     }  
 
     if(comando === "ajuda"){
-      message.channel.send(":fire: Verifique seu privado :fire: ");
+      message.channel.send(":fire: Enviei minhas informaçoes em seu privado, confira! :fire: ");
       
           const Aviso = args.join(" ");
           let semnada = new Discord.RichEmbed()
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
-       .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n :white_small_square:/anunciopv - Mandar mensagem no privado de todos os jogadores do servidor \n\n :white_small_square:/convidar - Você consegue o link para me convidar para seu servidor\n\n :white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: /nitrofree - Ganhe um nitro de Graça.")
+       .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n:white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: /ban - Retire o jogador do seu servidor.\n\n:white_small_square: /kick - Kick aquela pessoa chata.\n\n")
       
           if(!Aviso)
           return message.author.send(semnada)
@@ -139,19 +117,19 @@ bot.on('message', async message => {
           .setDescription(Aviso)
             
           .setTimestamp()
-          .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+          .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
           return message.channel.send(aviso);
         }
 
-        if(comando === "nitrofree"){
-          message.channel.send(":fire: Cheque seu privado, /nitrofree. :fire: ");
+        if(comando === "info"){
+          message.channel.send(":fire: Enviei as informaçoes do servidor em seu privado! :fire: ");
           
               const Aviso = args.join(" ");
               let semnada = new Discord.RichEmbed()
               .setColor("edac2a")
               .setAuthor(bot.user.username, bot.user.avatarURL)
-           .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
-              .setDescription("Para ganhar um Discord Nitro de graça entre neste link. \n\n\n\nhttps://gleam.io/mYgxP/nitro")
+           .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+              .setDescription("```[IP]\n jogar.freneticmc.ml\n\n[LOJA]\nhttp://loja.freneticmc.ml/\n\n[TWITTER]\nIndisponível.```")
           
               if(!Aviso)
               return message.author.send(semnada)
@@ -162,9 +140,45 @@ bot.on('message', async message => {
               .setDescription(Aviso)
                 
               .setTimestamp()
-              .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+              .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
               return message.channel.send(aviso);
             }
+
+            if(comando === "kick") {
+              //adicione o nome dos cargos que vc quer que use esse comando!
+                  if(!message.member.roles.some(r=>["@@Master", "@@Moderadores"].includes(r.name)) )
+                    return message.reply("Desculpe, você não tem permissão para usar isto!");
+                  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+                  if(!member)
+                    return message.reply("Por favor mencione um membro válido deste servidor");
+                  if(!member.kickable) 
+                    return message.reply("Eu não posso expulsar este usuário! Eles pode ter um cargo mais alto ou eu não tenho permissões de expulsar?");
+                  
+                  let reason = args.slice(1).join(' ');
+                  if(!reason) reason = "Nenhuma razão fornecida";
+                  
+                  await member.kick(reason)
+                    .catch(error => message.reply(`Desculpe ${message.author} não consegui expulsar o membro devido o: ${error}`));
+                  message.reply(`${member.user.tag} foi kickado por ${message.author.tag} Motivo: ${reason}`);
+              
+                }
+
+                if(comando === "ban") {
+                  //adicione o nome do cargo que vc quer que use esse comando!
+                  if(!message.member.roles.some(r=>["@@Master", "@@Moderadores"].includes(r.name)) )
+                    return message.reply("Desculpe, você não tem permissão para usar isto!");
+                  let member = message.mentions.members.first();
+                  if(!member)
+                    return message.reply("Por favor mencione um membro válido deste servidor");
+                  if(!member.bannable) 
+                    return message.reply("Eu não posso banir este usuário! Eles pode ter um cargo mais alto ou eu não tenho permissões de banir?");
+                  let reason = args.slice(1).join(' ');
+                  if(!reason) reason = "Nenhuma razão fornecida";
+                  await member.ban(reason)
+                    .catch(error => message.reply(`Desculpe ${message.author} não consegui banir o membro devido o : ${error}`));
+                  message.reply(`${member.user.tag} foi banido por ${message.author.tag} Motivo: ${reason}`);
+                }
+
 
         
 if(comando === "serverinfo"){
@@ -210,7 +224,7 @@ if(comando === "serverinfo"){
     .setColor("4a2aed")
     .setThumbnail(sicon)
     .setTitle(`${message.guild.name}`)
-    .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL) 
+    .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL) 
     .addField(`:hammer_pick: Informações sobre o discord`, "Veja as informações do servidor!")
     .addField(":upside_down: __Guild__ __ID__:", message.guild.id , false )
     .addField(":gem: __Dono__ :", message.guild.owner , true )
@@ -241,7 +255,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(message.author.avatarURL)
   .setTimestamp()
-.setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+.setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
 
   if(!usuario)
   return message.channel.send(semnada)
@@ -252,7 +266,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(usuario.user.avatarURL)
   .setTimestamp()
-.setFooter("©Anunciador - Todos os direitos reservados", bot.user.avatarURL)
+.setFooter("©Frenetic - Todos os direitos reservados", bot.user.avatarURL)
   
   message.channel.send(msg);
 }
@@ -268,7 +282,7 @@ if(comando === "botinfo"){
     .addField(':robot: Função:', `Ajuda os membros.`)
     .setTitle(`Informações do ${bot.user.tag}`)
     .setColor("0xff0000")
-    .setFooter("©Anunciador - Todos os direitos reservados", message.author.avatarURL)
+    .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
     .setThumbnail(bicon)
     .addField("Estou em:",` ${bot.guilds.size} servidores!.`)
     .addField("Estou com:",` ${bot.users.size} usuários ❤`)
