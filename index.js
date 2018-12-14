@@ -146,7 +146,7 @@ bot.on('message', async message => {
 
             if(comando === "kick") {
               //adicione o nome dos cargos que vc quer que use esse comando!
-                  if(!message.member.roles.some(r=>["@@Master", "@@Moderadores"].includes(r.name)) )
+                  if(!message.member.roles.some(r=>["👑 CEO"].includes(r.name)) )
                     return message.reply("Desculpe, você não tem permissão para usar isto!");
                   let member = message.mentions.members.first() || message.guild.members.get(args[0]);
                   if(!member)
@@ -165,7 +165,7 @@ bot.on('message', async message => {
 
                 if(comando === "ban") {
                   //adicione o nome do cargo que vc quer que use esse comando!
-                  if(!message.member.roles.some(r=>["@@Master", "@@Moderadores"].includes(r.name)) )
+                  if(!message.member.roles.some(r=>["👑 CEO"].includes(r.name)) )
                     return message.reply("Desculpe, você não tem permissão para usar isto!");
                   let member = message.mentions.members.first();
                   if(!member)
