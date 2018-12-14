@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`f!ajuda - Saiba mais sobre mim.`,`jogar.god-mc.tk`,`f!info - Saiba minhas info.`]
+  let status = [`g!ajuda - Saiba mais sobre mim.`,`jogar.god-mc.tk`,`f!info - Saiba minhas info.`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -224,7 +224,7 @@ if(comando === "serverinfo"){
     .setColor("4a2aed")
     .setThumbnail(sicon)
     .setTitle(`${message.guild.name}`)
-    .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL) 
+    .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL) 
     .addField(`:hammer_pick: Informações sobre o discord`, "Veja as informações do servidor!")
     .addField(":upside_down: __Guild__ __ID__:", message.guild.id , false )
     .addField(":gem: __Dono__ :", message.guild.owner , true )
