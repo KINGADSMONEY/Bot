@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`f!ajuda - Saiba mais sobre mim.`,`jogar.freneticmc.ml`,`f!info - Saiba minhas info.`]
+  let status = [`f!ajuda - Saiba mais sobre mim.`,`jogar.god-mc.tk`,`f!info - Saiba minhas info.`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -105,7 +105,7 @@ bot.on('message', async message => {
           let semnada = new Discord.RichEmbed()
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
-       .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+       .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL)
           .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n:white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: /ban - Retire o jogador do seu servidor.\n\n:white_small_square: /kick - Kick aquela pessoa chata.\n\n")
       
           if(!Aviso)
@@ -117,7 +117,7 @@ bot.on('message', async message => {
           .setDescription(Aviso)
             
           .setTimestamp()
-          .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+          .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL)
           return message.channel.send(aviso);
         }
 
@@ -128,8 +128,8 @@ bot.on('message', async message => {
               let semnada = new Discord.RichEmbed()
               .setColor("edac2a")
               .setAuthor(bot.user.username, bot.user.avatarURL)
-           .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
-              .setDescription("```[IP]\n jogar.freneticmc.ml\n\n[LOJA]\nhttp://loja.freneticmc.ml/\n\n[TWITTER]\nIndisponível.```")
+           .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL)
+              .setDescription("```[IP]\njogar.god-mc.tk\n\n[LOJA]\nIndisponível.\n\n[TWITTER]\nIndisponível.```")
           
               if(!Aviso)
               return message.author.send(semnada)
@@ -140,7 +140,7 @@ bot.on('message', async message => {
               .setDescription(Aviso)
                 
               .setTimestamp()
-              .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+              .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL)
               return message.channel.send(aviso);
             }
 
@@ -255,7 +255,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(message.author.avatarURL)
   .setTimestamp()
-.setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+.setFooter("©GodMc - Todos os direitos reservados", message.author.avatarURL)
 
   if(!usuario)
   return message.channel.send(semnada)
@@ -266,7 +266,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(usuario.user.avatarURL)
   .setTimestamp()
-.setFooter("©Frenetic - Todos os direitos reservados", bot.user.avatarURL)
+.setFooter("©GodMC - Todos os direitos reservados", bot.user.avatarURL)
   
   message.channel.send(msg);
 }
@@ -282,7 +282,7 @@ if(comando === "botinfo"){
     .addField(':robot: Função:', `Ajuda os membros.`)
     .setTitle(`Informações do ${bot.user.tag}`)
     .setColor("0xff0000")
-    .setFooter("©Frenetic - Todos os direitos reservados", message.author.avatarURL)
+    .setFooter("©GodMC - Todos os direitos reservados", message.author.avatarURL)
     .setThumbnail(bicon)
     .addField("Estou em:",` ${bot.guilds.size} servidores!.`)
     .addField("Estou com:",` ${bot.users.size} usuários ❤`)
@@ -290,7 +290,7 @@ if(comando === "botinfo"){
     .addField("Estou online à:",`${duration}`)
     .addField("Criado em:",`${moment(bot.user.createdAt).format('LLLL')}`)
     .addField("ID do bot",bot.user.id )
-    .addField("Meu Dono:", `<@430093309617111063`) 
+    .addField("Meu Dono:", `<@513341525422374961`) 
      return message.channel.send(botembed);
       
   }
