@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`s!ajuda - Saiba mais sobre mim.`,`surrealfactions.mc-srv.com`,`s!info - Saiba minhas info.`]
+  let status = [`g!ajuda - Saiba mais sobre mim.`,`GTA 5`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
@@ -68,7 +68,7 @@ bot.on('message', async message => {
       
 
 
-      if (message.content.startsWith("s!mute")) { 
+      if (message.content.startsWith("g!mute")) { 
         let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!tomute) return message.reply("Eu não achei o usuario");
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
@@ -105,7 +105,7 @@ bot.on('message', async message => {
           let semnada = new Discord.RichEmbed()
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
-       .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+       .setFooter("©GTA 5 - Todos os direitos reservados", message.author.avatarURL)
           .setDescription("\n\n:white_small_square: s!anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n:white_small_square:s!mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:s!mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: s!perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: s!botinfo - Saiba mais sobre mim.\n\n:white_small_square: s!avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: s!serverinfo - Saiba mais desse servidor.\n\n:white_small_square: s!hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: s!ban - Retire o jogador do seu servidor.\n\n:white_small_square: s!kick - Kick aquela pessoa chata.\n\n")
       
           if(!Aviso)
@@ -117,7 +117,7 @@ bot.on('message', async message => {
           .setDescription(Aviso)
             
           .setTimestamp()
-          .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+          .setFooter("©GTA 5 - Todos os direitos reservados", message.author.avatarURL)
           return message.channel.send(aviso);
         }
 
@@ -128,7 +128,7 @@ bot.on('message', async message => {
               let semnada = new Discord.RichEmbed()
               .setColor("edac2a")
               .setAuthor(bot.user.username, bot.user.avatarURL)
-           .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+           .setFooter("©GTA 5 - Todos os direitos reservados", message.author.avatarURL)
               .setDescription("```[IP]\nsurrealfactions.mc-srv.comk\n\n[LOJA]\nsurrealfaction.com\n\n[TWITTER]\nIndisponível.```")
           
               if(!Aviso)
@@ -140,7 +140,7 @@ bot.on('message', async message => {
               .setDescription(Aviso)
                 
               .setTimestamp()
-              .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+              .setFooter("©GTA 5 - Todos os direitos reservados", message.author.avatarURL)
               return message.channel.send(aviso);
             }
 
@@ -224,7 +224,7 @@ if(comando === "serverinfo"){
     .setColor("4a2aed")
     .setThumbnail(sicon)
     .setTitle(`${message.guild.name}`)
-    .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL) 
+    .setFooter("GTA 5 - Todos os direitos reservados", message.author.avatarURL) 
     .addField(`:hammer_pick: Informações sobre o discord`, "Veja as informações do servidor!")
     .addField(":upside_down: __Guild__ __ID__:", message.guild.id , false )
     .addField(":gem: __Dono__ :", message.guild.owner , true )
@@ -255,7 +255,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(message.author.avatarURL)
   .setTimestamp()
-.setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+.setFooter("GTA 5 - Todos os direitos reservados", message.author.avatarURL)
 
   if(!usuario)
   return message.channel.send(semnada)
@@ -266,7 +266,7 @@ if(comando === "avatar"){
   .setColor("#bc0000")
   .setImage(usuario.user.avatarURL)
   .setTimestamp()
-.setFooter("©RedeSurreal - Todos os direitos reservados", bot.user.avatarURL)
+.setFooter("GTA 5 - Todos os direitos reservados", bot.user.avatarURL)
   
   message.channel.send(msg);
 }
@@ -282,7 +282,7 @@ if(comando === "botinfo"){
     .addField(':robot: Função:', `Ajudar os membros.`)
     .setTitle(`Informações do ${bot.user.tag}`)
     .setColor("0xff0000")
-    .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
+    .setFooter("GTA 5 - Todos os direitos reservados", message.author.avatarURL)
     .setThumbnail(bicon)
     .addField("Estou em:",` ${bot.guilds.size} servidores!.`)
     .addField("Estou com:",` ${bot.users.size} usuários ❤`)
@@ -294,6 +294,22 @@ if(comando === "botinfo"){
      return message.channel.send(botembed);
       
   }
+
+  let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle(":bell: TAG PLAYSTATION :bell:\n\n")
+  .setDescription("\n\nPara pegar a tag playstation clique no emoji.")
+  .setTimestamp()
+  .setFooter("Pegar tag PLAYSTATION")
+  message.channel.send(embed).then(msg=>{
+  msg.react('✅').then(function(sucess){
+      var c1 = msg.createReactionCollector((r, u) => r.emoji.name === "✅" &&  !u.bot, { time: 86400000 });
+  c1.on("collect", async r => {
+     message.guild.members.get(r.users.last().id).addRole(message.guild.roles.find("name","PLAYSTATION").id)
+      r.remove(r.users.last().id)
+  })
+  })
+  })
 
   if(comando === "hospedagem"){
     const os = require('os')
