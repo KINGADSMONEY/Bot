@@ -68,7 +68,7 @@ bot.on('message', async message => {
       
 
 
-      if (message.content.startsWith("/mute")) { 
+      if (message.content.startsWith("s!mute")) { 
         let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!tomute) return message.reply("Eu não achei o usuario");
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('**Sem permissão**');
@@ -106,7 +106,7 @@ bot.on('message', async message => {
           .setColor("edac2a")
           .setAuthor(bot.user.username, bot.user.avatarURL)
        .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
-          .setDescription("\n\n:white_small_square: /anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n:white_small_square:/mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:/mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: /perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: /botinfo - Saiba mais sobre mim.\n\n:white_small_square: /avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: /serverinfo - Saiba mais desse servidor.\n\n:white_small_square: /hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: /ban - Retire o jogador do seu servidor.\n\n:white_small_square: /kick - Kick aquela pessoa chata.\n\n")
+          .setDescription("\n\n:white_small_square: s!anuncio - Com este comando você pode fazer um anuncio no chat que você digitou o comando. \n\n:white_small_square:s!mute - Tira a permissão de falar da pessoa que for mutada, você deve ter o cargo **SILENCIADO** criado.\n\n :white_small_square:s!mensagem - Você manda uma mensagem para o meu criador.\n\n:white_small_square: s!perguntar - Está solitario, faça perguntas para ele o cara mais sincero.\n\n:white_small_square: s!botinfo - Saiba mais sobre mim.\n\n:white_small_square: s!avatar - Pegue o avatar para utiliza-lo.\n\n:white_small_square: s!serverinfo - Saiba mais desse servidor.\n\n:white_small_square: s!hospedagem - Informaçoes da máquina que me deixa ativo.\n\n:white_small_square: s!ban - Retire o jogador do seu servidor.\n\n:white_small_square: s!kick - Kick aquela pessoa chata.\n\n")
       
           if(!Aviso)
           return message.author.send(semnada)
@@ -279,7 +279,7 @@ if(comando === "botinfo"){
       
       let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .addField(':robot: Função:', `Ajuda os membros.`)
+    .addField(':robot: Função:', `Ajudar os membros.`)
     .setTitle(`Informações do ${bot.user.tag}`)
     .setColor("0xff0000")
     .setFooter("©RedeSurreal - Todos os direitos reservados", message.author.avatarURL)
