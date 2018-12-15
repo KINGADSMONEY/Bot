@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 function changing_status() {
-  let status = [`s!ajuda - Saiba mais sobre mim.`,`jogar.god-mc.tk`,`s!info - Saiba minhas info.`]
+  let status = [`s!ajuda - Saiba mais sobre mim.`,`surrealfactions.mc-srv.com`,`s!info - Saiba minhas info.`]
 
   let random = status[Math.floor(Math.random() * status.length)]
   bot.user.setActivity(random)
