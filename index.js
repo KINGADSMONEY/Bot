@@ -17,7 +17,7 @@ express()
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
-  client.user.setPresence({ game: { name: `musica, k!comandos.`, type: 2, url: 'https://www.twitch.tv/Discord'} });
+  client.user.setPresence({ game: { name: `musica, k!help`, type: 2, url: 'https://www.twitch.tv/Discord'} });
 // caso queira o bot trasmitindo use:
 /*
    client.user.setPresence({ game: { name: 'comando', type: 1, url: 'https://www.twitch.tv/ladonegro'} });
