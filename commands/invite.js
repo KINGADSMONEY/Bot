@@ -10,7 +10,7 @@ const embed = new Discord.RichEmbed()
 .setTimestamp()
 .setColor("#a32aff")
 .setThumbnail("")
-.setDescription(` Meu link para me convidar para seu servidor : https://discordapp.com/oauth2/authorize?client_id=526441939566985222&scope=bot&permissions=8`)
+.setDescription(` Meu link para me convidar para seu servidor : https://discordapp.com/oauth2/authorize?client_id=526448524624396318&scope=bot&permissions=8`)
 
 message.delete().catch(O_o=>{});  
 message.channel.send(embed);
