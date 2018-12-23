@@ -28,7 +28,7 @@ exports.run = (bot, message, args) => {
     pc.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
             .setTitle("🎮 | Jogadores")
-            .setDescription("`k!avatar\n k!policia @Jailson\n k!beijar @Jailson\n k!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n k!invites @Knucks\n k!ship @Knucks @Sneck\n k!invite `")
+            .setDescription("`k!avatar\n k!policia @Jailson\n k!beijar @Jailson\n k!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n k!invites @Knucks\n k!ship @Knucks @Sneck\n k!invite \nk!servidores \n`")
             msg.edit(embed);
         })
 
