@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("guildMemberAdd", member =>{
-  member.send('Entre no meu servidor de suporte. https://discord.gg/Q22pts');
+  member.send('Entre no meu servidor de suporte. https://discord.gg/Buu3mF2');
 });
  
 fs.readdir("./events/", (err, files) => {
