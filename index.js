@@ -17,7 +17,7 @@ express()
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
-  client.user.setPresence({ game: { name: 'suporte ao servidor DISCORD NITRO | FREE', type: 1, url: 'https://www.twitch.tv/Discord'} });
+  client.user.setPresence({ game: { name: `conteudo para ${client.guilds.size} servidores.`, type: 1, url: 'https://www.twitch.tv/Discord'} });
 // caso queira o bot trasmitindo use:
 /*
    client.user.setPresence({ game: { name: 'comando', type: 1, url: 'https://www.twitch.tv/ladonegro'} });
@@ -28,6 +28,19 @@ client.on("ready", () => {
       */
 });
 
+
+client.on('guildMemberAdd', member => {
+  let role = member.guild.roles.find(role => role.name == 'Membro');
+   member.addRole(role);
+  });
+
+  client.on("guildMemberAdd", member =>{
+    member.send('Bem-vindo, respeite as regras, fique ligado nos anúncios e boa sorte em sua nova jornada nesse servidor.');
+});
+
+client.on("guildMemberAdd", member =>{
+  member.send('Entre no meu servidor de suporte. https://discord.gg/Q22pts');
+});
  
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
@@ -55,5 +68,6 @@ client.on("message", message => {
   }
  
 });
+
  
-client.login(config.token)
+client.login(config.token);
