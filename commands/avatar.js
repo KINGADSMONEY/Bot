@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#bc0000")
     .setImage(usuario.user.avatarURL)
     .setTimestamp()
-     .setFooter(" DC FREE - Todos os direitos reservados", message.author.avatarURL)
+     .setFooter(" Knu - Todos os direitos reservados", message.author.avatarURL)
     
     message.channel.send(msg);
 }
