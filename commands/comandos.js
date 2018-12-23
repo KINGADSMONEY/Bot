@@ -21,7 +21,7 @@ exports.run = (bot, message, args) => {
     mouse.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
             .setTitle("**🔧 | Administracao**")
-            .setDescription("`k!ban @Knucks <motivo>\n k!mute @Knucks <motivo>\n k!anuncio <msg>\n k!clear 99`")
+            .setDescription("`k!ban @Knucks <motivo>\n k!mute @Knucks <motivo>\n k!anuncio <msg>\n k!clear 99 \n k!chaton \n k!chatoff`")
             msg.edit(embed);
         })
         
