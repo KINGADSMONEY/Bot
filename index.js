@@ -35,7 +35,7 @@ client.on('guildMemberAdd', member => {
   });
 
   client.on("guildMemberAdd", member =>{
-    member.send(`Bem-vindo ao ${message.guild.name} respeite as regras, fique ligado nos anúncios e boa sorte em sua nova jornada nesse servidor.`);
+    member.send("Bem-vindo, respeite as regras, fique ligado nos anúncios e boa sorte em sua nova jornada nesse servidor.");
 });
 
 client.on("guildMemberAdd", member =>{
