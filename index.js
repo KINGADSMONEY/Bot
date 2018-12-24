@@ -34,10 +34,6 @@ client.on('guildMemberAdd', member => {
    member.addRole(role);
   });
 
-  client.on("guildMemberAdd", member =>{
-    member.send('Bem-vindo, respeite as regras, fique ligado nos anúncios e boa sorte em sua nova jornada nesse servidor.');
-});
-
 client.on("guildMemberAdd", member =>{
   member.send('Entre no meu servidor de suporte. https://discord.gg/Buu3mF2');
 });
