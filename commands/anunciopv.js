@@ -7,7 +7,7 @@ module.exports.run = async (client,message,args)=>{
         .setDescription(`${sayMessage} \n \n \n`)
         .setTimestamp()
         .setColor("ff0000")
-        .setFooter(` Por `, message.author.avatarURL)
+        .setFooter(`Anúncio importante!`, message.author.avatarURL)
     message.guild.members.map(membro=>{ membro.send(anuncio)})
 }
 

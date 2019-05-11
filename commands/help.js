@@ -20,22 +20,22 @@ exports.run = (bot, message, args) => {
         
     mouse.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
-            .setTitle("**🔧 | Administracao**")
-            .setDescription("`k!ban @Knucks <motivo>\n k!mute @Knucks <motivo>\n k!anuncio <msg>\n k!clear 99 \n k!chaton \n k!chatoff`")
+            .setTitle("🔧 | Administracao")
+            .setDescription("b!retirado @Usuario foi retirado da equipe!\n b!rebaixar @Usuario foi rebaixado a @Cargo\n b!promover @Usuario foi promovido a @Cargo\n b!anunciopv <mensagem>\n b!ban @Barth <motivo>\n b!mute @Barth <motivo>\n b!anuncio <msg>\n b!clear 99 \n b!chaton \n b!chatoff`")
             msg.edit(embed);
         })
         
     pc.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
             .setTitle("🎮 | Jogadores")
-            .setDescription("`k!avatar\n k!policia @Jailson\n k!beijar @Jailson\n k!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n k!invites @Knucks\n k!ship @Knucks @Sneck\n k!invite \nk!servidores \n`")
+            .setDescription("b!invite - Pegue meu link de convite!\n b!invites - Saiba quantos invites você tem.\n b!avatar\n b!policia @Jailson\n b!beijar @Jailson\n b!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n b!ship @Barth @Sneck\n b!invite \nb!servidores \n")
             msg.edit(embed);
         })
 
     placadevideo.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
-            .setTitle("🤖 | B0T")
-            .setDescription("Criador : \n <@513341525422374961>")
+            .setTitle("🤖  | BOT")
+            .setDescription("Criador : \n <@573609837519437844>")
             msg.edit(embed);
         })        
     })

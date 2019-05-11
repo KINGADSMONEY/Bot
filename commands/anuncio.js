@@ -10,13 +10,13 @@ exports.run = (client, message, args) => {
 
     if(!args[0]){
         message.channel.send(new Discord.RichEmbed()
-        .setDescription("**Comando:** k!anuncio")
+        .setDescription("**Comando:** b!anuncio")
         .setColor("#a32aff")
         .setImage("")
         .setThumbnail("")
-        .addField("Uso:", "\`\`k!anuncio <mensagem>\`\`")
-        .addField("Exemplo:", "\`\`k!anuncio Eu sou um Bot`\`")
-        .addField("Alternativas:", "\`\`k!anunciar\`\`"))
+        .addField("Uso:", "\`\`b!anuncio <mensagem>\`\`")
+        .addField("Exemplo:", "`\`b!anuncio oie <3`\`")
+        .addField("Alternativas:", "\`\`b!anunciar\`\`"))
         }
             let volte = args[0];
             if (!volte) return;

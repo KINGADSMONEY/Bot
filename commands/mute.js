@@ -5,11 +5,11 @@ module.exports.run = async (client, message, args) =>{
     message.delete().catch(O_o=>{});
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply("você não tem permissão! :x:").then(msg => msg.delete(6000));
     const comousar = new Discord.RichEmbed()
-    .setAuthor("Knucks", client.user.avatarURL)
+    .setAuthor("BarthBOT", client.user.avatarURL)
     .setDescription(`Ao executar, ira mutar o membro mencionado.`)
     .setColor("4a2aed")
-    .setFooter("© Knucks - Todos os direitos reservados.")
-    .addField("Como usar:", "`k!mute @usuário <motivo>`")
+    .setFooter("©BarthBOT - Todos os direitos reservados.")
+    .addField("Como usar:", "`d!mute @usuário <motivo>`")
     let member = message.mentions.members.first();
     if(!member)
         return message.channel.send(message.author, comousar).then(msg => msg.delete(10000));
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args) =>{
         .setThumbnail(member.user.avatarURL)
         .addField("📋 Motivo:", motivo)
         .setTimestamp()
-        .setFooter("Knucks - Moderação")
+        .setFooter("BarthBOT - Moderação")
      
       
     const mutado = new Discord.RichEmbed()
@@ -58,7 +58,7 @@ module.exports.run = async (client, message, args) =>{
         .addField("👮 Autor:", message.author)
         .addField("📋 Motivo:", motivo)
         .setTimestamp()
-        .setFooter("Knucks - Moderação")
+        .setFooter("BarthBOT - Moderação")
         
     if(message.guild.channels.find("name", "⛔ᴘᴜɴɪçᴏᴇs")){
         let guild = message.guild.channels.find("name", "⛔ᴘᴜɴɪçᴏᴇs");   

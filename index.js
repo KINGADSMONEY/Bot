@@ -17,7 +17,7 @@ express()
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
-  client.user.setPresence({ game: { name: `musica, k!help`, type: 2, url: 'https://www.twitch.tv/Discord'} });
+  client.user.setPresence({ game: { name: 'suas dúvidas, b!help - b!invite', type: 1, url: 'https://www.twitch.tv/ladonegro'} });
 // caso queira o bot trasmitindo use:
 /*
    client.user.setPresence({ game: { name: 'comando', type: 1, url: 'https://www.twitch.tv/ladonegro'} });
@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("guildMemberAdd", member =>{
-  member.send('Entre no meu servidor de suporte. https://discord.gg/Buu3mF2');
+  member.send('Entre no meu servidor de suporte. https://discord.gg/2Ucad8');
 });
  
 fs.readdir("./events/", (err, files) => {

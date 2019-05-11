@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#bc0000")
     .setImage(message.author.avatarURL)
     .setTimestamp()
-     .setFooter(" Knucks - Todos os direitos reservados", bot.user.avatarURL)
+     .setFooter(" BarthBOT - Todos os direitos reservados", bot.user.avatarURL)
     
     if(!usuario)
     return message.channel.send(semnada)
@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#bc0000")
     .setImage(usuario.user.avatarURL)
     .setTimestamp()
-     .setFooter(" Knu - Todos os direitos reservados", message.author.avatarURL)
+     .setFooter(" BarthBOT - Todos os direitos reservados", message.author.avatarURL)
     
     message.channel.send(msg);
 }

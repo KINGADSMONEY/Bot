@@ -24,7 +24,7 @@ message.delete().catch(O_o=>{});
        .setThumbnail(member.user.avatarURL)
 
        .setTimestamp()
-   .setFooter(" - Todos os direitos reservados", message.author.avatarURL)
+   .setFooter(" BarthBOT - Todos os direitos reservados", message.author.avatarURL)
     
         .addField("Motivo:", motivo)
 
