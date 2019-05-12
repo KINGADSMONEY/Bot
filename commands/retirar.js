@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(new Discord.RichEmbed()
     .setColor("#a32aff")
     .setTimestamp()
-    .setDescription(" | Você não tem permissão para promover alguém!")).then(m => m.delete(5000))
+    .setDescription(" | Você não tem permissão para retirar alguém!")).then(m => m.delete(5000))
 
     if(!args[0]){
         message.channel.send(new Discord.RichEmbed()
