@@ -28,7 +28,7 @@ exports.run = (bot, message, args) => {
     pc.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
             .setTitle("🎮 | Jogadores")
-            .setDescription("b!invite - Pegue meu link de convite!\n b!invites - Saiba quantos invites você tem.\n b!avatar\n b!policia @Jailson\n b!beijar @Jailson\n b!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n b!ship @Barth @Sneck\n b!invite \nb!servidores \n")
+            .setDescription("b!banir - Da um ban em um jogador que você odeia, seu batatao...\n b!invite - Pegue meu link de convite!\n b!invites - Saiba quantos invites você tem.\n b!avatar\n b!policia @Jailson\n b!beijar @Jailson\n b!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n b!ship @Barth @Sneck\n b!invite \nb!servidores \n")
             msg.edit(embed);
         })
 
