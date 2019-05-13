@@ -10,7 +10,7 @@ const embed = new Discord.RichEmbed()
 .setAuthor("**Irineu, você não sabe nem eu.....**",)
 .setColor("#a32aff")
 .setThumbnail("")
-.setImage("https://pics.me.me/isso-aqui-ta-a-porra-35380657.png")
+.setImage("https://i.ytimg.com/vi/Hebw7Mw_WAg/maxresdefault.jpg")
 
 message.delete().catch(O_o=>{});  
 message.channel.send(embed);
