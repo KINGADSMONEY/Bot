@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setAuthor(message.author.tag, message.author.displayAvatarURL)
-    .addField(`${variavel}`)
+    .setAuthor(message.author.tag,)
+    .setDescription(`${message.author.tag} ${variavel}`)
     message.channel.send(embed)
   }
