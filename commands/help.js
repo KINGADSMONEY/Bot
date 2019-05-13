@@ -28,7 +28,7 @@ exports.run = (bot, message, args) => {
     pc.on('collect', r2 => { 
         embed = new Discord.RichEmbed()
             .setTitle("🎮 | Jogadores")
-            .setDescription("b!votekick - faça uma votação para kikar alguém.\nb!userinfo - saiba as info de um usuario\nb!sorteio - faça um sorteio numerico.\nb!nivel - saiba seu nivel!\nb!mensagens - saiba quantas mensagens você tem!\nb!cronometro - coloque um tempo para fazer algo.\nb!mensagens - saiba quantas mensagens você tem.\nb!fortnite - saiba as informaçoes do fortnite de um usuario\nb!nivel - saiba seu nivel.\nb!memes - Reage com memes poha... \n b!banir - Da um ban em um jogador que você odeia, seu batatao...\n b!invite - Pegue meu link de convite!\n b!invites - Saiba quantos invites você tem.\n b!avatar\n b!policia @Jailson\n b!beijar @Jailson\n b!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n b!ship @Barth @Sneck\n b!invite \nb!servidores \n")
+            .setDescription("s!corno <mencione> - saiba se seu amigo e corno rs.\ns!gui <pergunta>\nb!votekick - faça uma votação para kikar alguém.\nb!userinfo - saiba as info de um usuario\nb!sorteio - faça um sorteio numerico.\nb!cronometro - coloque um tempo para fazer algo.\nb!memes - Reage com memes poha... \n b!banir - Da um ban em um jogador que você odeia, seu batatao...\n b!invite - Pegue meu link de convite!\n b!invites - Saiba quantos invites você tem.\n b!avatar\n b!policia @Jailson\n b!beijar @Jailson\n b!cargoinfo Cargo ( Saiba as informaçoes do cargo.)\n b!ship @Barth @Sneck\n b!invite \nb!servidores \n")
             msg.edit(embed);
         })
 
